@@ -15,21 +15,21 @@
 
     <EditText
         android:id="@+id/messageInput"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+
         android:hint="Type a message" />
 
     <ImageView
         android:id="@+id/sendMessageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_send" />
+        android:src="@drawable/common_google_signin_btn_icon_dark" />
 
     <ImageView
         android:id="@+id/attachFileButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_attach" />
+        android:src="@drawable/common_google_signin_btn_icon_dark" />
 
 </LinearLayout>

@@ -1,16 +1,18 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.google.services)
 }
+
 
 android {
     namespace = "com.example.mychat"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.mychat"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -49,8 +51,8 @@ dependencies {
     implementation (libs.firebase.auth)
     implementation (libs.firebase.firestore)
     implementation( libs.firebase.storage)
-    implementation (libs.glide)
+//    implementation (libs.glide)
     implementation( libs.circleimageview)
-    implementation( libs.recordview)
-    implementation (libs.imagepicker)
+//    implementation( libs.recordview)
+//    implementation (libs.imagepicker)
 }

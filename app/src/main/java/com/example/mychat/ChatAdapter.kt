@@ -1,5 +1,6 @@
 package com.example.mychat
 
+import android.annotation.SuppressLint
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+//import com.bumptech.glide.Glide
 
 class ChatAdapter(private var messages: List<Message>, private val currentUserId: String) :
     RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
@@ -27,6 +28,7 @@ class ChatAdapter(private var messages: List<Message>, private val currentUserId
         return ChatViewHolder(view)
     }
 
+    @SuppressLint("PrivateResource")
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
         val message = messages[position]
 
@@ -43,9 +45,9 @@ class ChatAdapter(private var messages: List<Message>, private val currentUserId
             }
             "IMAGE" -> {
                 holder.messageImage.visibility = View.VISIBLE
-                Glide.with(holder.itemView.context)
-                    .load(message.mediaUrl)
-                    .into(holder.messageImage)
+//                Glide.with(holder.itemView.context)
+//                    .load(message.mediaUrl)
+//                    .into(holder.messageImage)
             }
             "VOICE" -> {
                 holder.voiceIcon.visibility = View.VISIBLE
@@ -56,15 +58,15 @@ class ChatAdapter(private var messages: List<Message>, private val currentUserId
         }
 
         // Align messages
-        val params = holder.messageContainer.layoutParams as FrameLayout.LayoutParams
+//        val params = holder.messageContainer.layoutParams as FrameLayout.LayoutParams
         if (message.senderId == currentUserId) {
-            holder.messageContainer.setBackgroundResource(com.google.android.material.R.drawable.abc_ic_star_black_16dp)
-            params.gravity = Gravity.END
+//            holder.messageContainer.setBackgroundResource(com.google.android.material.R.drawable.abc_ic_star_black_16dp)
+//            params.gravity = Gravity.END
         } else {
-            holder.messageContainer.setBackgroundResource(com.google.android.material.R.drawable.abc_ic_star_half_black_16dp)
-            params.gravity = Gravity.START
+//            holder.messageContainer.setBackgroundResource(com.google.android.material.R.drawable.abc_ic_star_half_black_16dp)
+//            params.gravity = Gravity.START
         }
-        holder.messageContainer.layoutParams = params
+//        holder.messageContainer.layoutParams = params
     }
 
     override fun getItemCount(): Int = messages.size
